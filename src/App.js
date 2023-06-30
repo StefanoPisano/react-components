@@ -25,6 +25,15 @@ const concepts = [
 ];
 
 function App() {
+
+  const conceptElements = concepts.map(concept =>
+    <li className="concept">
+      <img src={concept.image} alt={concept.title} />
+      <h2>{concept.title}</h2>
+      <p>{concept.description}</p>
+    </li>
+  )
+
   return (
     <div>
       <header>
@@ -33,11 +42,7 @@ function App() {
         <p>Selected key React concepts you should know about</p>
       </header>
       <ul id="concepts">
-        <li className="concept">
-          <img src="TODO: IMAGE" alt="TODO: TITLE" />
-          <h2>TODO: TITLE</h2>
-          <p>TODO: DESCRIPTION</p>
-        </li>
+        {conceptElements}
       </ul>
     </div>
   );
